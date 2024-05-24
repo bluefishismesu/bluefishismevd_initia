@@ -3,7 +3,7 @@
 This Python tool is designed to Generate PEERS with HEIGHT block
 
 ```bash
-python peerscheck_with_height.py 60 peers_height_goot.txt
+python3 peerscheck_with_height.py 60 peers_height_goot.txt
 ```
 
 
@@ -39,7 +39,7 @@ pip install requests
 2. Run the script:
 
 ```bash
-python peerscheck.py
+python3 peerscheck.py
 ```
 
 
