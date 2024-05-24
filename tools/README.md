@@ -1,10 +1,49 @@
 # peerscheck_with_height.py
-# PEERS with Good Height Generate
-This Python tool is designed to Generate PEERS with HEIGHT block
+# Network Connection and Block Height Checker
+
+This script checks the connectivity and block height of nodes specified in a given URL. It attempts to connect to each node, measures the connection time, and retrieves the latest block height if the connection is successful. The top nodes with the highest block heights are then saved to a specified file.
+
+## Dependencies
+
+Ensure you have the required Python libraries installed:
 
 ```bash
-python3 peerscheck_with_height.py 60 peers_height_goot.txt
+pip install requests
 ```
+
+### Main Script Execution
+
+The script reads the URL, processes the connections, and saves the top N connections to a file.
+
+```python
+try:
+    top_n = int(sys.argv[1]) if len(sys.argv) > 1 else 40
+    output_filename = sys.argv[2] if len(sys.argv) > 2 else 'top_ips_ports.txt'
+    connections = parse_and_check('https://rpc-initia-testnet.trusted-point.com/peers.txt')
+    save_top_connections(connections, output_filename, top_n)
+    logging.info("Processing completed successfully.")
+except Exception as e:
+    logging.error(f"An error occurred: {e}")
+```
+
+### Usage
+
+Run the script with optional command-line arguments for the number of top connections to save and the output file name.
+
+```bash
+python3 peerscheck_with_height.py [top_n] [output_filename]
+```
+
+### Example
+
+Run the script with optional command-line arguments to parse a URL, keep the top 40 connections with the highest block heights, and save the results to a file named 'top_ips_ports.txt'.
+
+```bash
+python3 script_name.py 40 top_ips_ports.txt
+```
+
+
+This will parse the URL 'https://rpc-initia-testnet.trusted-point.com/peers.txt', retrieve the connections, save the top 40 connections to the file 'top_ips_ports.txt', and log the processing status.
 
 
 # peerscheck.py
