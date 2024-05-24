@@ -21,7 +21,7 @@ You can install the required library using pip:
 
 ```bash
 pip install requests
-```bash
+```
 
 
 ## Usage
@@ -31,7 +31,7 @@ pip install requests
 
 ```bash
 python connection_checker.py
-```bash
+```
 
 
 
