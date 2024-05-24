@@ -125,6 +125,7 @@ def save_top_connections(connections, output_filename, top_n=40):
             logging.info(f"Connection: {conn[0]}, Block Height: {conn[1]}")
             if first_entry:
                 file.write(conn[0] )
+                first_entry = False
             else:             
                 file.write(','+conn[0] )
 # Example: Read from the URL, keep the top 40 with the lowest response times, and save to 'top_ips_ports.txt'
