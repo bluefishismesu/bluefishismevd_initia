@@ -1,3 +1,12 @@
+# peerscheck_with_height.py
+# PEERS with Good Height Generate
+This Python tool is designed to Generate PEERS with HEIGHT block
+
+```bash
+python peerscheck_with_height.py 60 peers_height_goot.txt
+```
+
+
 # peerscheck.py
 # PEERS Checker Tool
 
@@ -30,7 +39,7 @@ pip install requests
 2. Run the script:
 
 ```bash
-python connection_checker.py
+python peerscheck.py
 ```
 
 

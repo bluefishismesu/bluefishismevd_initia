@@ -70,6 +70,16 @@ def save_top_connections(connections, output_filename, top_n=40):
         file.write(','.join([conn[0] for conn in top_connections]))
     logging.info(f"Saved top {top_n} connections to {output_filename}.")
 
+def get_moniker_from_json(json_str):
+    try:
+        data = json.loads(json_str)
+        moniker = data.get('result', {}).get('node_info', {}).get('moniker')
+        if moniker is not None:
+            return moniker
+        else:
+            return "Moniker not found"
+    except json.JSONDecodeError:
+        return "Invalid JSON"
 # Example: Read from the URL, keep the top 40 with the lowest response times, and save to 'top_ips_ports.txt'
 try:
     connections = parse_and_check('https://rpc-initia-testnet.trusted-point.com/peers.txt')
