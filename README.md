@@ -43,9 +43,12 @@ sudo journalctl -u initiad -f -o cat
 initiad status | jq -r .sync_info
 ```
 
-##Check the BLOCK HEIGHT
+##Check the BLOCK HEIGHT From Validator (Moniker)
+
+Regarding the retrieval of BlockHeight, it is necessary to use the first best PPEERS found by myself. Then, by adding 1 to the PORT, the block height can be obtained to reflect the network status more closely. Otherwise, you have to manually check it from https://scan.testnet.initia.xyz/initiation-1
+
 ```bash
-local_height=$(initiad status | jq -r .sync_info.latest_block_height); network_height=$(curl -s https://rpc-initia-testnet.trusted-point.com/status | jq -r .result.sync_info.latest_block_height); blocks_left=$((network_height - local_height)); echo "Your node height: $local_height"; echo "Network height: $network_height"; echo "Blocks left: $blocks_left"
+local_height=$(initiad status | jq -r .sync_info.latest_block_height); network_height=$(curl -s http://51.222.10.137:53457/status | jq -r .result.sync_info.latest_block_height); blocks_left=$((network_height - local_height)); echo "Your node height: $local_height"; echo "Network height: $network_height"; echo "Blocks left: $blocks_left"
 ```
 
 ##Check peers connected to your node
