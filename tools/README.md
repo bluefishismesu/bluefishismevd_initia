@@ -1,3 +1,18 @@
+# peers_from_nodeinfo.py
+# Network Connection and Block Height Checker From node_info API
+
+First Pass to create top_ips_ports.txt
+```bash
+python3 peerscheck_with_height.py 10
+```
+
+Secnod Pass to create top_ips_ports_nodinfo.txt(use top_ips_ports.txt as input)
+```bash
+python3 peers_from_nodeinfo.py 60
+```
+after process top_ips_ports.txt will include 60 PEERS node info
+
+
 # peerscheck_with_height.py
 # Network Connection and Block Height Checker
 

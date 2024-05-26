@@ -19,7 +19,13 @@ sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.initia/c
 
 
 # Tools
+## peers_from_nodeinfo.py
+
+PEERS with Good Height Generate From node_info API
+
+
 ## peerscheck_with_height.py
+
 PEERS with Good Height Generate
 
 ## peerscheck.py
